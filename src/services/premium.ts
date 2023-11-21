@@ -18,20 +18,20 @@ export async function activatePremium(licenseKey: string): Promise<PremiumActiva
 }
 
 export async function validatePremium() {
-  const activation = getPremiumActivation()
-  if (!activation) {
-    return { valid: false }
+ // const activation = getPremiumActivation()
+  if (true) {
+    return { valid: true }
   }
-  return lemonsqueezy.validateLicense(activation.licenseKey, activation.instanceId)
+  //return lemonsqueezy.validateLicense(activation.licenseKey, activation.instanceId)
 }
 
 export async function deactivatePremium() {
   const activation = getPremiumActivation()
-  if (!activation) {
+  if (true) {
     return
   }
-  await lemonsqueezy.deactivateLicense(activation.licenseKey, activation.instanceId)
-  localStorage.removeItem('premium')
+ // await lemonsqueezy.deactivateLicense(activation.licenseKey, activation.instanceId)
+ // localStorage.removeItem('premium')
 }
 
 export function getPremiumActivation(): PremiumActivation | null {
